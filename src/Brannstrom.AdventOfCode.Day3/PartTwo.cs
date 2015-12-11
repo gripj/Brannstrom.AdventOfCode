@@ -23,7 +23,8 @@ namespace Brannstrom.AdventOfCode.Day3
         public void Calculate_Amount_Of_Houses_To_Receive_Presents()
         {
             DeliverPresents();
-            CountAmountOfHousesVisited().Should().Be(2360);
+            var amountOfHousesVisted = _santa.VisitedHouses.Union(_roboSanta.VisitedHouses).Count();
+            amountOfHousesVisted.Should().Be(2360);
         }
 
         private void DeliverPresents()
@@ -34,17 +35,6 @@ namespace Brannstrom.AdventOfCode.Day3
 
             _santa.DeliverPresents(directionsToSanta);
             _roboSanta.DeliverPresents(directionsToRoboSanta);
-        }
-
-        private int CountAmountOfHousesVisited()
-        {
-            var allVisitedHouses = _santa.VisitedHouses;
-            foreach (var house in _roboSanta.VisitedHouses)
-            {
-                if (!allVisitedHouses.Contains(house))
-                    allVisitedHouses.Add(house);
-            }
-            return allVisitedHouses.Count();
         }
     }
 }

@@ -16,5 +16,10 @@
             return (obj is House) && (X == ((House) obj).X &&
                                       Y == ((House) obj).Y);
         }
+
+        public override int GetHashCode()
+        {
+            return X.GetHashCode() + Y.GetHashCode();
+        }
     }
 }
