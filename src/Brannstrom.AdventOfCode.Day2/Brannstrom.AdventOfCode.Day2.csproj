@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PartTwo.cs" />
     <Compile Include="PresentOrder.cs" />
     <Compile Include="PartOne.cs" />
     <Compile Include="PresentBox.cs" />

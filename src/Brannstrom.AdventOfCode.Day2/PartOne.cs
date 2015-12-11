@@ -25,7 +25,7 @@ namespace Brannstrom.AdventOfCode.Day2
         public void Should_Calculate_Wrapping_Paper_Area_For_Presents_Order()
         {
             var presentsOrder = new List<string>() {"2x3x4", "1x1x10"};
-            _presentOrder.GetWrappingPaperArea(presentsOrder).Should().Be(101);
+            _presentOrder.GetTotalWrappingPaperArea(presentsOrder).Should().Be(101);
         }
 
         [Test]

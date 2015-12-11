@@ -18,18 +18,34 @@ namespace Brannstrom.AdventOfCode.Day2
 
         public int GetWrappingPaperAreaForPresentsOrder()
         {
-            return GetWrappingPaperArea(GetListOfPresentDimensions());
+            return GetTotalWrappingPaperArea(GetListOfPresentDimensions());
         }
 
-        public int GetWrappingPaperArea(IEnumerable<string> listOfBoxDimensions)
+        public int GetTotalWrappingPaperArea(IEnumerable<string> listOfBoxDimensions)
         {
-            return listOfBoxDimensions.Sum(presentDimensions => GetWrappingPaperArea(presentDimensions));
+            return listOfBoxDimensions.Sum(presentDimensions => GetAreaForBoxDimensions(presentDimensions));
         }
 
-        private int GetWrappingPaperArea(string presentOrderDimensions)
+        private int GetAreaForBoxDimensions(string presentOrderDimensions)
         {
             var sides = presentOrderDimensions.Split('x');
             return new PresentBox(Convert.ToInt32(sides[0]), Convert.ToInt32(sides[1]), Convert.ToInt32(sides[2])).WrappingPaperSize;
+        }
+
+        public int GetRibbonLengthForPresentsOrder()
+        {
+            return GetTotalRibbonLength(GetListOfPresentDimensions());
+        }
+
+        public int GetTotalRibbonLength(IEnumerable<string> listOfBoxDimensions)
+        {
+            return listOfBoxDimensions.Sum(presentDimensions => GetRibbonLengthForBoxDimensions(presentDimensions));
+        }
+
+        private int GetRibbonLengthForBoxDimensions(string presentOrderDimensions)
+        {
+            var sides = presentOrderDimensions.Split('x');
+            return new PresentBox(Convert.ToInt32(sides[0]), Convert.ToInt32(sides[1]), Convert.ToInt32(sides[2])).RibbonLength;
         }
     }
 }
