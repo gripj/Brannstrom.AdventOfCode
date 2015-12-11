@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode", "Brannstrom.AdventOfCode\Brannstrom.AdventOfCode.csproj", "{F292D144-7EAD-4367-AA7D-0978FD989B1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day1", "Brannstrom.AdventOfCode.Day1\Brannstrom.AdventOfCode.Day1.csproj", "{F292D144-7EAD-4367-AA7D-0978FD989B1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
