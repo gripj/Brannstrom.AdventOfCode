@@ -6,7 +6,7 @@ namespace Brannstrom.AdventOfCode.Day3
     {
         private int X { get; set; }
         private int Y { get; set; }
-        public List<House> VisitedHouses { get; set; } 
+        public List<House> VisitedHouses { get; } 
 
         public Santa()
         {

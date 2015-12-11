@@ -2,19 +2,19 @@
 {
     public class House
     {
-        public int HorizontalPosition { get; }
-        public int VerticalPosition { get; }
+        public int X { get; }
+        public int Y { get; }
 
         public House(int x, int y)
         {
-            HorizontalPosition = x;
-            VerticalPosition = y;
+            X = x;
+            Y = y;
         }
 
         public override bool Equals(object obj)
         {
-            return (obj is House) && (HorizontalPosition == ((House) obj).HorizontalPosition &&
-                                      VerticalPosition == ((House) obj).VerticalPosition);
+            return (obj is House) && (X == ((House) obj).X &&
+                                      Y == ((House) obj).Y);
         }
     }
 }
