@@ -8,6 +8,7 @@ namespace Brannstrom.AdventOfCode.Day6
     public class HouseOwner
     {
         public House House { get;  }
+        private bool _knowsAncientNordicElvish = false;
 
         public HouseOwner()
         {
@@ -22,13 +23,13 @@ namespace Brannstrom.AdventOfCode.Day6
                     switch (instruction.Type)
                     {
                         case InstructionType.On:
-                            House.Lights[x, y] = true;
+                            House.Lights[x, y] = _knowsAncientNordicElvish ? House.Lights[x, y] + 1 : 1;
                             break;
                         case InstructionType.Off:
-                            House.Lights[x, y] = false;
+                            House.Lights[x, y] = _knowsAncientNordicElvish ? (House.Lights[x, y] >= 1 ? House.Lights[x, y] - 1 : 0) : 0;
                             break;
                         case InstructionType.Toggle:
-                            House.Lights[x, y] = !House.Lights[x, y];
+                            House.Lights[x, y] = _knowsAncientNordicElvish ? House.Lights[x, y] + 2 : (House.Lights[x, y] == 1 ? 0 : 1);
                             break;
                     }
                 }
@@ -45,6 +46,11 @@ namespace Brannstrom.AdventOfCode.Day6
             using (var reader = new StreamReader(stream))
                 while (reader.Peek() >= 0)
                     yield return reader.ReadLine();
-        } 
+        }
+
+        public void LearnAncientElvish()
+        {
+            _knowsAncientNordicElvish = true;
+        }
     }
 }
