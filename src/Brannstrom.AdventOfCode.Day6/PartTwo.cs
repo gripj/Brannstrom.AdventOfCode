@@ -26,7 +26,7 @@ namespace Brannstrom.AdventOfCode.Day6
         }
 
         [Test]
-        public void TurnOff_Instruction_Should_Descrease_Brightness()
+        public void TurnOff_Instruction_Should_Decrease_Brightness()
         {
             var toggleInstruction = new Instruction("toggle 0,0 through 999,999");
             var turnOffInstruction = new Instruction("turn off 0,0 through 999,999");
