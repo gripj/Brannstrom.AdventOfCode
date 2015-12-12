@@ -1,4 +1,4 @@
-﻿namespace Brannstrom.AdventOfCode.Day5
+﻿namespace Brannstrom.AdventOfCode.Day5.Rules
 {
     public interface IRule
     {

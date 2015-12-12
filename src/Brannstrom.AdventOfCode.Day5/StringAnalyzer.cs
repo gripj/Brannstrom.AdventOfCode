@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Brannstrom.AdventOfCode.Day5.Rules;
 
 namespace Brannstrom.AdventOfCode.Day5
 {
