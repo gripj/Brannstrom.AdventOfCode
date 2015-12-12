@@ -12,8 +12,7 @@ namespace Brannstrom.AdventOfCode.Day5
         private int NumberOfVowelsFound { get; set; }
         private bool HasLetterTwiceInARow { get; set; }
         private readonly List<string> _disallowedStrings = new List<string>() { "ab", "cd", "pq", "xy"};
-        private int MinNumberOfVowels => 3;
-
+        private static int MinNumberOfVowels => 3;
 
         public bool StringIsNice(string input)
         {
@@ -39,8 +38,6 @@ namespace Brannstrom.AdventOfCode.Day5
             NumberOfVowelsFound = 0;
             HasLetterTwiceInARow = false;
         }
-
-
 
         public int GetNumberOfNiceStringsFromSantasList()
         {
