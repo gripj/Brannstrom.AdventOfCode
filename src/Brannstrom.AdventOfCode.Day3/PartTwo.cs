@@ -23,8 +23,8 @@ namespace Brannstrom.AdventOfCode.Day3
         public void Calculate_Amount_Of_Houses_To_Receive_Presents()
         {
             DeliverPresents();
-            var amountOfHousesVisted = _santa.VisitedHouses.Union(_roboSanta.VisitedHouses).Count();
-            amountOfHousesVisted.Should().Be(2360);
+            var amountOfHousesVisited = _santa.VisitedHouses.Union(_roboSanta.VisitedHouses).Count();
+            amountOfHousesVisited.Should().Be(2360);
         }
 
         private void DeliverPresents()

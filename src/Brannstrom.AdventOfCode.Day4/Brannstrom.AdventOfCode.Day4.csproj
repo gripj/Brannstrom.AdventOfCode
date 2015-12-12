@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HashAnalyzer.cs" />
     <Compile Include="PartOne.cs" />
+    <Compile Include="PartTwo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
