@@ -1,2 +1,2 @@
 # Brannstrom.AdventOfCode
-Solutions to Advent of Code (2015) http://adventofcode.com/
+Solutions to [Advent of Code](http://adventofcode.com/) (2015) 
