@@ -11,10 +11,10 @@ namespace Brannstrom.AdventOfCode.Day8
         [Test]
         public void Should_Count_Difference()
         {
-            Count_Difference().Should().Be(1350);
+            CountDifference().Should().Be(1350);
         }
 
-        private int Count_Difference()
+        private int CountDifference()
         {
             var fileStrings = new Reader().ReadStringsFromFile();
             return fileStrings.Sum(c => c.Length - (Regex.Unescape(c).Length - 2));
