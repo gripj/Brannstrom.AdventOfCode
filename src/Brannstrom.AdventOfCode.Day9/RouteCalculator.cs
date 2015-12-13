@@ -10,7 +10,7 @@ namespace Brannstrom.AdventOfCode.Day9
     {
         private Dictionary<string, Dictionary<string, int>> Distances { get; set; }
         private Dictionary<string[], int> RouteDistances { get; set; }
-        private string directionsPattern = @"^(\w+) to (\w+) = (\d+)";
+        private const string DirectionsPattern = @"^(\w+) to (\w+) = (\d+)";
         private IEnumerable<string> Directions { get; set; }
 
         private void CalculateRoutes(IEnumerable<string> directions)
@@ -25,7 +25,7 @@ namespace Brannstrom.AdventOfCode.Day9
 
         private void FindRoutes()
         {
-            foreach (var matches in Directions.Select(direction => Regex.Match(direction, directionsPattern).Groups))
+            foreach (var matches in Directions.Select(direction => Regex.Match(direction, DirectionsPattern).Groups))
             {
                 if (!Distances.ContainsKey(matches[1].Value))
                     Distances[matches[1].Value] = new Dictionary<string, int>();

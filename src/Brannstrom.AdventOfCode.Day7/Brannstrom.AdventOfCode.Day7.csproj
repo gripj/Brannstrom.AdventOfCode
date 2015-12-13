@@ -54,7 +54,7 @@
   <ItemGroup>
     <Compile Include="Gate\And.cs" />
     <Compile Include="Circuit.cs" />
-    <Compile Include="Gate\CircuitWire.cs" />
+    <Compile Include="Gate\Wire.cs" />
     <Compile Include="Gate\Gate.cs" />
     <Compile Include="Gate\LShift.cs" />
     <Compile Include="Gate\Not.cs" />
