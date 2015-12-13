@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Brannstrom.AdventOfCode.Day11.PasswordRequirements;
 using FluentAssertions;
 using NUnit.Framework;
@@ -60,7 +59,6 @@ namespace Brannstrom.AdventOfCode.Day11
         [TestCase("abbceffg", true)]
         [TestCase("abbcegjk", false)]
         [TestCase("aaabb", true)]
-
         public void Should_Verify_Non_Overlapping_Pairs(string input, bool expectedResult)
         {
             new DifferentNonOverlappingPairsRequirement().IsValid(input).Should().Be(expectedResult);
