@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day7", "Brannstrom.AdventOfCode.Day7\Brannstrom.AdventOfCode.Day7.csproj", "{22423775-017A-4C66-93F0-E2608F73C3DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day8", "Brannstrom.AdventOfCode.Day8\Brannstrom.AdventOfCode.Day8.csproj", "{39242363-E70E-4C01-BA39-66D19A961AFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{22423775-017A-4C66-93F0-E2608F73C3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22423775-017A-4C66-93F0-E2608F73C3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22423775-017A-4C66-93F0-E2608F73C3DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39242363-E70E-4C01-BA39-66D19A961AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39242363-E70E-4C01-BA39-66D19A961AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39242363-E70E-4C01-BA39-66D19A961AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39242363-E70E-4C01-BA39-66D19A961AFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
