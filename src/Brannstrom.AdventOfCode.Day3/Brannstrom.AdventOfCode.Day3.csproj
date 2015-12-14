@@ -60,7 +60,6 @@
     <Compile Include="Santa.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="input.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
