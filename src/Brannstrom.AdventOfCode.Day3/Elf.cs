@@ -15,7 +15,7 @@ namespace Brannstrom.AdventOfCode.Day3
         private IEnumerable<string> ReadDirectionsList()
         {
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Brannstrom.AdventOfCode.Day3.input.txt"))
-            using (var reader = new StreamReader(stream))
+            using (var reader = new StreamReader(stream)) 
                 while (reader.Peek() >= 0)
                     yield return reader.ReadLine();
         } 
