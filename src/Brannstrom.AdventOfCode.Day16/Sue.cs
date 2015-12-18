@@ -23,8 +23,8 @@ namespace Brannstrom.AdventOfCode.Day16
                 Compounds.Add(parts[i], int.Parse(parts[i + 1]));
         }
 
-        public int Id { get; set; }
-        public Dictionary<string, int> Compounds { get; set; }
+        public int Id { get;  }
+        public Dictionary<string, int> Compounds { get; private set; }
 
         public bool HasCompounds(Dictionary<string, int> compounds)
         {
