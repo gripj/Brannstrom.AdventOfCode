@@ -25,6 +25,13 @@ namespace Brannstrom.AdventOfCode.Day18
             };
             _grid = new LightGrid(6);
             _grid.Initialize(initialConditions);
+            _grid.LockLights(new List<Tuple<int, int>>()
+            {
+                new Tuple<int, int>(0, 0),
+                new Tuple<int, int>(0, 5),
+                new Tuple<int, int>(5, 0),
+                new Tuple<int, int>(5, 5)
+            });
         }
 
         [Test]
@@ -50,14 +57,6 @@ namespace Brannstrom.AdventOfCode.Day18
         [Test]
         public void Should_Animate_With_Locked_Lights()
         {
-            _grid.LockLights(new List<Tuple<int, int>>()
-            {
-                new Tuple<int, int>(0, 0),
-                new Tuple<int, int>(0, 5),
-                new Tuple<int, int>(5, 0),
-                new Tuple<int, int>(5, 5)
-            });
-
             var game = new GameOfLight(_grid);
             var lightsAfterAnimation = game.AnimateLights(5);
 
@@ -67,14 +66,6 @@ namespace Brannstrom.AdventOfCode.Day18
         [Test]
         public void LightGrid_Should_Be_Set_Up_According_To_Instructions_With_Locked_Lights()
         {
-            _grid.LockLights(new List<Tuple<int, int>>()
-            {
-                new Tuple<int, int>(0, 0),
-                new Tuple<int, int>(0, 5),
-                new Tuple<int, int>(5, 0),
-                new Tuple<int, int>(5, 5)
-            });
-
             var lights = _grid.Lights.Cast<Light>().ToList();
             lights.Count().Should().Be(36);
             lights.Count(light => light.IsOn).Should().Be(17);
