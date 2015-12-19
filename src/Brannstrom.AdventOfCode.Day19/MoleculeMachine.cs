@@ -36,8 +36,8 @@ namespace Brannstrom.AdventOfCode.Day19
 
             while (currentIndex != -1)
             {
-                var tmpMolecule = baseMolecule.Remove(currentIndex, instruction.From.Length);
-                createdMolecules.Add(tmpMolecule.Insert(currentIndex, instruction.To));
+                var molecule = baseMolecule.Remove(currentIndex, instruction.From.Length);
+                createdMolecules.Add(molecule.Insert(currentIndex, instruction.To));
                 currentIndex = baseMolecule.IndexOf(instruction.From, currentIndex + 1, StringComparison.Ordinal);
             }
 
