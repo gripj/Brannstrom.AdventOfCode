@@ -16,25 +16,25 @@
             TurnOn();
         }
 
-        public Light Animate(int amountOfNeighbours)
+        public Light Animate(int amountOfNeighbors)
         {
             var light = new Light();
 
             if (IsLocked)
                 light.Lock();
 
-            else if (ShouldBeOn(amountOfNeighbours))
+            else if (ShouldBeOn(amountOfNeighbors))
                 light.TurnOn();
 
             return light;
         }
 
-        private bool ShouldBeOn(int amountOfNeighbours)
+        private bool ShouldBeOn(int amountOfNeighbors)
         {
-            if (IsOn && (amountOfNeighbours == 2 || amountOfNeighbours == 3))
+            if (IsOn && (amountOfNeighbors == 2 || amountOfNeighbors == 3))
                 return true;
 
-            return !IsOn && amountOfNeighbours == 3;
+            return !IsOn && amountOfNeighbors == 3;
         }
     }
 }
