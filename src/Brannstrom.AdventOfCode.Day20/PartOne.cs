@@ -43,8 +43,8 @@ namespace Brannstrom.AdventOfCode.Day20
             var house = new House(5);
             var elf = new Elf(2);
             var secondElf = new Elf(7);
-            house.Presents += elf.PresentsDelivered;
-            house.Presents += secondElf.PresentsDelivered;
+            elf.DeliverPresents(house);
+            secondElf.DeliverPresents(house);
             house.Presents.Should().Be(90);
         }
 
