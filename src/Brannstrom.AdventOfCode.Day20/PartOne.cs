@@ -9,11 +9,7 @@ namespace Brannstrom.AdventOfCode.Day20
         [Test]
         public void Get_First_House_To_Receive_Indicated_Amount_Of_Presents()
         {
-            var neverendingStreet = new NeverendingStreet();
-
-            neverendingStreet.DeliverPresents();
-
-            neverendingStreet.GetFirstHouseToReceiveAmountOfPresents(34000000).Should().Be(786240);
+            GetFirstHouseToReceiveAmountOfPresents(34000000).Should().Be(786240);
         }
 
         [Test]
@@ -74,11 +70,16 @@ namespace Brannstrom.AdventOfCode.Day20
         [TestCase(130, 8)]
         public void Should_Get_First_House_To_Receive_Indicated_Amount_Of_Presents(int amountOfPresents, int expectedHouseNumber)
         {
+            GetFirstHouseToReceiveAmountOfPresents(amountOfPresents).Should().Be(expectedHouseNumber);
+        }
+
+        private int GetFirstHouseToReceiveAmountOfPresents(int amountOfPresents)
+        {
             var neverendingStreet = new NeverendingStreet();
 
             neverendingStreet.DeliverPresents();
 
-            neverendingStreet.GetFirstHouseToReceiveAmountOfPresents(amountOfPresents).Should().Be(expectedHouseNumber);
+            return neverendingStreet.GetFirstHouseToReceiveAmountOfPresents(amountOfPresents);
         }
     }
 }
