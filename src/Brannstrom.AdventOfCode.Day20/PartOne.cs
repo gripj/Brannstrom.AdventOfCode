@@ -13,24 +13,10 @@ namespace Brannstrom.AdventOfCode.Day20
         }
 
         [Test]
-        public void Elf_Should_Get_Number()
-        {
-            var elf = new Elf(1337);
-            elf.Number.Should().Be(1337);
-        }
-
-        [Test]
         public void Amount_Of_Presents_Delivered_Should_Be_Ten_Times_Number()
         {
             var elf = new Elf(1337);
             elf.PresentsDelivered.Should().Be(13370);
-        }
-
-        [Test]
-        public void House_Should_Get_Number()
-        {
-            var house = new House(3);
-            house.Number.Should().Be(3);
         }
 
         [Test]
