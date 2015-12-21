@@ -60,14 +60,14 @@ namespace Brannstrom.AdventOfCode.Day21
 
         public IEnumerable<IEnumerable<Item>> GetValidItemSets()
         {
-            var allItemCombinations = GetPowerSet<Item>(Items);
+            var allItemCombinations = GetAllCombinations(Items);
 
             return allItemCombinations
                 .Where(IsValidCollection)
                 .ToList();
         }
 
-        private IEnumerable<IEnumerable<T>> GetPowerSet<T>(List<T> list)
+        private static IEnumerable<IEnumerable<T>> GetAllCombinations<T>(IReadOnlyList<T> list)
         {
             return from m in Enumerable.Range(0, 1 << list.Count)
                    select
@@ -76,7 +76,7 @@ namespace Brannstrom.AdventOfCode.Day21
                        select list[i];
         }
 
-        private bool IsValidCollection(IEnumerable<Item> items)
+        private static bool IsValidCollection(IEnumerable<Item> items)
         {
             return items.Count(x => x is Weapon) == 1 &&
                    items.Count(x => x is Armor) <= 1 &&
