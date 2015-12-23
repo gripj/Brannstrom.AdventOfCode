@@ -5,13 +5,13 @@ namespace Brannstrom.AdventOfCode.Day22
 {
     public class Turn
     {
-        public Turn(ISpell spell, int totalManaSpent, Turn previousTurn)
+        public Turn(Character player, Character boss, ISpell spell, int totalManaSpent, Turn previousTurn)
         {
             Spell = spell;
             TotalManaSpent = totalManaSpent;
             PreviousTurn = previousTurn;
-            Player = new Character(50, 0, 0, 500);
-            Boss = new Character(58, 9, 0, 0);
+            Player = player.Clone();
+            Boss = boss.Clone();
         }
 
         public Turn PreviousTurn { get; }

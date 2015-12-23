@@ -40,7 +40,7 @@ namespace Brannstrom.AdventOfCode.Day22
 
             _boss.Attack(_player);
 
-            return !_player.IsAlive ? 
+            return !_player.IsAlive ?
                 TurnResult.PlayerLost : TurnResult.ContinueFight;
         }
 
@@ -57,12 +57,8 @@ namespace Brannstrom.AdventOfCode.Day22
             var previousTurn = _turn.PreviousTurn;
             if (previousTurn == null) return;
 
-            _boss.Hp = previousTurn.Boss.Hp;
-            _boss.PoisonTurns = previousTurn.Boss.PoisonTurns;
-            _player.Hp = previousTurn.Player.Hp;
-            _player.Mana = previousTurn.Player.Mana;
-            _player.ShieldTurns = previousTurn.Player.ShieldTurns;
-            _player.RechargeTurns = previousTurn.Player.RechargeTurns;
+            _boss.Copy(previousTurn.Boss);
+            _player.Copy(previousTurn.Player);
         }
 
         private void ApplyDifficulty()

@@ -6,16 +6,17 @@ namespace Brannstrom.AdventOfCode.Day22.Spells
     {
         public IEnumerable<ISpell> Spells { get; }
 
-        public SpellBook()
+        public SpellBook(IEnumerable<ISpell> spells)
         {
-            Spells = new List<ISpell>()
-            {
-                new Drain(),
-                new MagicMissile(),
-                new Poison(),
-                new Recharge(),
-                new Shield()
-            };
+            Spells = spells;
+            //Spells = new List<ISpell>()
+            //{
+            //    new Drain(),
+            //    new MagicMissile(),
+            //    new Poison(),
+            //    new Recharge(),
+            //    new Shield()
+            //};
         } 
     }
 }

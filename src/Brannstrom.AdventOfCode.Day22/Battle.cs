@@ -5,9 +5,16 @@ namespace Brannstrom.AdventOfCode.Day22
     public class Battle
     {
         private bool _hardDifficultyEnabled;
-        private readonly SpellBook _spellBook = new SpellBook();
         private PriorityQueue<Turn> _turns;
         private Turn _previousTurn;
+        private readonly Character _player;
+        private readonly Character _boss;
+
+        public Battle(Character player, Character boss)
+        {
+            _player = player;
+            _boss = boss;
+        }
 
         public void EnableHardDifficulty()
         {
@@ -41,7 +48,7 @@ namespace Brannstrom.AdventOfCode.Day22
         private void FightPossibleTurns()
         {
             var manaSpent = _previousTurn?.TotalManaSpent ?? 0;
-            foreach (var spell in _spellBook.Spells)
+            foreach (var spell in _player.SpellBook.Spells)
             {
                 var newSpell = spell.Copy();
                 Fight(newSpell, manaSpent + newSpell.Cost);
@@ -50,7 +57,7 @@ namespace Brannstrom.AdventOfCode.Day22
 
         private void Fight(ISpell spell, int manaSpent)
         {
-            var turn = new Turn(spell, manaSpent, _previousTurn);
+            var turn = new Turn(_player, _boss, spell, manaSpent, _previousTurn);
             var duel = new Duel();
             ToggleDifficulty(duel);
             FightOneTurn(turn, duel);
