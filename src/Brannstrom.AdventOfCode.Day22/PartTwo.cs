@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Brannstrom.AdventOfCode.Day22.Spells;
+﻿using Brannstrom.AdventOfCode.Day22.Spells;
 using FluentAssertions;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
 
 namespace Brannstrom.AdventOfCode.Day22
 {
