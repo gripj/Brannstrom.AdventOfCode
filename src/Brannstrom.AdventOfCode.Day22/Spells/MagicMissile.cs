@@ -8,11 +8,6 @@
             target.Hp -= 4;
         }
 
-        public ISpell Copy()
-        {
-            return new MagicMissile();
-        }
-
         public int Cost => 53;
     }
 }

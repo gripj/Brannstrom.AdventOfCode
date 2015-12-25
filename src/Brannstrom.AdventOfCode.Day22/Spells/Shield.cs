@@ -8,11 +8,6 @@
             owner.ShieldTurns = 5;
         }
 
-        public ISpell Copy()
-        {
-            return new Shield();
-        }
-
         public int Cost => 113;
     }
 }

@@ -8,11 +8,6 @@
             target.PoisonTurns = 6;
         }
 
-        public ISpell Copy()
-        {
-            return new Poison();
-        }
-
         public int Cost => 173;
     }
 }

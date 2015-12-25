@@ -9,11 +9,6 @@
             owner.Hp += 2;
         }
 
-        public ISpell Copy()
-        {
-            return new Drain();
-        }
-
         public int Cost => 73;
     }
 }

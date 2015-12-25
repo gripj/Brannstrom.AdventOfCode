@@ -49,10 +49,7 @@ namespace Brannstrom.AdventOfCode.Day22
         {
             var manaSpent = _previousTurn?.TotalManaSpent ?? 0;
             foreach (var spell in _player.SpellBook.Spells)
-            {
-                var newSpell = spell.Copy();
-                Fight(newSpell, manaSpent + newSpell.Cost);
-            }
+                Fight(spell, manaSpent + spell.Cost);
         }
 
         private void Fight(ISpell spell, int manaSpent)

@@ -8,11 +8,6 @@
             owner.RechargeTurns = 5;
         }
 
-        public ISpell Copy()
-        {
-            return new Recharge();
-        }
-
         public int Cost => 229;
     }
 }

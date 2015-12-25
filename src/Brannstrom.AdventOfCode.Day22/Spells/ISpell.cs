@@ -4,6 +4,5 @@
     {
         int Cost { get; }
         void Cast(Character owner, Character target);
-        ISpell Copy();
     }
 }
