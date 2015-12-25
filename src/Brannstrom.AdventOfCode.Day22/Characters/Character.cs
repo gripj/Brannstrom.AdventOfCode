@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using Brannstrom.AdventOfCode.Day22.Spells;
 
-namespace Brannstrom.AdventOfCode.Day22
+namespace Brannstrom.AdventOfCode.Day22.Characters
 {
     public class Character
     {
-        public SpellBook SpellBook { get; private set; }
         public int Hp { get; set; }
         public int Armor { get; private set; }
         public int Damage { get; set; }
@@ -85,20 +80,6 @@ namespace Brannstrom.AdventOfCode.Day22
             ShieldTurns = character.ShieldTurns;
             RechargeTurns = character.RechargeTurns;
             PoisonTurns = character.PoisonTurns;
-        }
-
-        public void LearnSpells(IEnumerable<ISpell> spells)
-        {
-            SpellBook = new SpellBook(spells);
-        }
-
-        public void LearnAllSpells()
-        {
-            var allSpells = from t in Assembly.GetExecutingAssembly().GetTypes()
-                            where t.GetInterfaces().Contains(typeof(ISpell))
-                                     && t.GetConstructor(Type.EmptyTypes) != null
-                            select Activator.CreateInstance(t) as ISpell;
-            SpellBook = new SpellBook(allSpells);
         }
     }
 }

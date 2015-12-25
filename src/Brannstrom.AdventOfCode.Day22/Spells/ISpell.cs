@@ -1,4 +1,6 @@
-﻿namespace Brannstrom.AdventOfCode.Day22.Spells
+﻿using Brannstrom.AdventOfCode.Day22.Characters;
+
+namespace Brannstrom.AdventOfCode.Day22.Spells
 {
     public interface ISpell
     {

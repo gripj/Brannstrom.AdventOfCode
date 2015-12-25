@@ -1,4 +1,5 @@
-﻿using Brannstrom.AdventOfCode.Day22.Spells;
+﻿using Brannstrom.AdventOfCode.Day22.Characters;
+using Brannstrom.AdventOfCode.Day22.Spells;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -7,13 +8,13 @@ namespace Brannstrom.AdventOfCode.Day22
     [TestFixture]
     public class PartTwo
     {
-        private Character _player;
+        private Wizard _player;
         private Character _boss;
 
         [SetUp]
         public void SetUp()
         {
-            _player = new Character(50, 0, 0, 500);
+            _player = new Wizard(50, 0, 0, 500);
             _player.LearnAllSpells();
             _boss = new Character(58, 9, 0, 0);
         }

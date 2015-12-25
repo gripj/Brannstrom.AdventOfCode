@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Brannstrom.AdventOfCode.Day22.Characters;
 using Brannstrom.AdventOfCode.Day22.Spells;
 
 namespace Brannstrom.AdventOfCode.Day22

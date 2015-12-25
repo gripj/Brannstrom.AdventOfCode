@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Character.cs" />
+    <Compile Include="Characters\Character.cs" />
     <Compile Include="Battle.cs" />
     <Compile Include="TurnResult.cs" />
     <Compile Include="PartOne.cs" />
@@ -68,6 +68,7 @@
     <Compile Include="Spells\Poison.cs" />
     <Compile Include="Spells\Recharge.cs" />
     <Compile Include="Spells\Shield.cs" />
+    <Compile Include="Characters\Wizard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

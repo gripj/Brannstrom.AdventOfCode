@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Brannstrom.AdventOfCode.Day22.Characters;
 using Brannstrom.AdventOfCode.Day22.Spells;
 using FluentAssertions;
 using NUnit.Framework;
@@ -9,13 +10,13 @@ namespace Brannstrom.AdventOfCode.Day22
     [TestFixture]
     public class PartOne
     {
-        private Character _player;
+        private Wizard _player;
         private Character _boss;
 
         [SetUp]
         public void SetUp()
         {
-            _player = new Character(50, 0, 0, 500);
+            _player = new Wizard(50, 0, 0, 500);
             _player.LearnAllSpells();
             _boss = new Character(58, 9, 0, 0);
         }
@@ -107,7 +108,7 @@ namespace Brannstrom.AdventOfCode.Day22
         [Test]
         public void Player_Should_Be_Able_To_Learn_All_Spells()
         {
-            var player = new Character(50, 0, 0, 500);
+            var player = new Wizard(50, 0, 0, 500);
             player.SpellBook.Should().BeNull();
             player.LearnAllSpells();
             player.SpellBook.Spells.Distinct().Count().Should().Be(5);
@@ -116,7 +117,7 @@ namespace Brannstrom.AdventOfCode.Day22
         [Test]
         public void Player_Should_Win_Example_Battle_One()
         {
-            var player = new Character(10, 0, 0, 250);
+            var player = new Wizard(10, 0, 0, 250);
             var boss = new Character(13, 8, 0, 0);
             player.LearnSpells(new List<ISpell>()
             {
@@ -129,7 +130,7 @@ namespace Brannstrom.AdventOfCode.Day22
         [Test]
         public void Player_Should_Win_Example_Battle_Two()
         {
-            var player = new Character(10, 0, 0, 250);
+            var player = new Wizard(10, 0, 0, 250);
             var boss = new Character(14, 8, 0, 0);
             player.LearnAllSpells();
             new Battle(player, boss).FindLowestManaNeededToWinFight().Should().Be(641);

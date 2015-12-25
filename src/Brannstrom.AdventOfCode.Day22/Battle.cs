@@ -1,4 +1,5 @@
-﻿using Brannstrom.AdventOfCode.Day22.Spells;
+﻿using Brannstrom.AdventOfCode.Day22.Characters;
+using Brannstrom.AdventOfCode.Day22.Spells;
 
 namespace Brannstrom.AdventOfCode.Day22
 {
@@ -7,10 +8,10 @@ namespace Brannstrom.AdventOfCode.Day22
         private bool _hardDifficultyEnabled;
         private PriorityQueue<Turn> _turns;
         private Turn _previousTurn;
-        private readonly Character _player;
+        private readonly Wizard _player;
         private readonly Character _boss;
 
-        public Battle(Character player, Character boss)
+        public Battle(Wizard player, Character boss)
         {
             _player = player;
             _boss = boss;
