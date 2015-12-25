@@ -31,10 +31,10 @@ namespace Brannstrom.AdventOfCode.Day19
 
         public ReplacementInstruction MakeInstruction(string input)
         {
-            var parts = input.Split(new string[] { "=>" }, StringSplitOptions.RemoveEmptyEntries);
-            if (parts.Length > 1)
-                return new ReplacementInstruction(parts[0].Trim(), parts[1].Trim());
-            return null;
+            var parts = input.Split(new[] { "=>" }, StringSplitOptions.RemoveEmptyEntries);
+            return parts.Length > 1 ? 
+                new ReplacementInstruction(parts[0].Trim(), parts[1].Trim()) : 
+                null;
         }
     }
 }

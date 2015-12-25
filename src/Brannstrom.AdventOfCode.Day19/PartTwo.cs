@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -31,7 +30,7 @@ namespace Brannstrom.AdventOfCode.Day19
                 new ReplacementInstruction("e", "H"),
                 new ReplacementInstruction("e", "O")
             };
-            var machine = new MoleculeMachine(instructions);
+            var machine = new MoleculeMachine(instructions); 
             machine.GetStepsNeededToMakeMolecule("e", input).Should().Be(expectedAmountOfSteps);
         }
     }

@@ -18,11 +18,8 @@ namespace Brannstrom.AdventOfCode.Day19
         {
             var createdMolecules = new List<string>();
 
-            foreach (var replacementInstruction in _replacementInstructions)
-            {
-                var molecules = CreateMolecules(molecule, replacementInstruction);
+            foreach (var molecules in _replacementInstructions.Select(ri => CreateMolecules(molecule, ri)))
                 createdMolecules.AddRange(molecules);
-            }
  
             return createdMolecules.Distinct().Count();
         }
@@ -48,7 +45,7 @@ namespace Brannstrom.AdventOfCode.Day19
         {
             _iterations++;
 
-            if (!ShouldContinue)
+            if (ShouldStop)
                 return int.MaxValue;
 
             var molecules = ReverseMolecule(goalMolecule).ToList();
@@ -56,7 +53,7 @@ namespace Brannstrom.AdventOfCode.Day19
             return IterateWithNewMolecules(molecules, startingMolecule, step);
         }
 
-        private static bool ShouldContinue => _iterations < 100000;
+        private static bool ShouldStop => _iterations > 100000;
 
         private IEnumerable<string> ReverseMolecule(string molecule)
         {
