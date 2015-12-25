@@ -28,7 +28,5 @@ namespace Brannstrom.AdventOfCode.Day22.Characters
                             select Activator.CreateInstance(t) as ISpell;
             SpellBook = new SpellBook(allSpells);
         }
-
-
     }
 }
