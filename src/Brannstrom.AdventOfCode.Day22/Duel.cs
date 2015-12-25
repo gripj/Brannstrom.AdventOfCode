@@ -12,53 +12,33 @@ namespace Brannstrom.AdventOfCode.Day22
 
         public TurnResult Fight(Turn turn)
         {
-            _turn = turn;
-            StartWhereLastTurnEnded();
-
+            StartWhereLastTurnEnded(turn);
             ApplyDifficulty();
 
-            if (!_player.IsAlive)
-                return TurnResult.PlayerLost;
+            for (var t = 0; t < 2; t++)
+            {
+                if (SomeoneDied) return GetWinner();
+                ApplySpellEffects();
+                if (SomeoneDied) return GetWinner();
 
-            ApplySpellEffects();
+                if (t == 0)
+                {
+                    if (SpellIsIllegal()) return TurnResult.Illegal;
+                    _spell.Cast(_player, _boss);
+                } 
+                else _boss.Attack(_player);
+            }
 
-            if (!_boss.IsAlive)
-                return TurnResult.PlayerWon;
-
-            if (SpellIsIllegal())
-                return TurnResult.Illegal;
-
-            _spell.Cast(_player, _boss);
-
-            if (!_boss.IsAlive)
-                return TurnResult.PlayerWon;
-
-            ApplySpellEffects();
-
-            if (!_boss.IsAlive)
-                return TurnResult.PlayerWon;
-
-            _boss.Attack(_player);
-
-            return !_player.IsAlive ?
-                TurnResult.PlayerLost : TurnResult.ContinueFight;
+            return GetEndOfTurnResult();
         }
 
-        private void StartWhereLastTurnEnded()
+        private void StartWhereLastTurnEnded(Turn turn)
         {
+            _turn = turn;
             _player = _turn.Player;
             _boss = _turn.Boss;
             _spell = _turn.Spell;
             CopyValuesFromLastTurn();
-        }
-
-        private void CopyValuesFromLastTurn()
-        {
-            var previousTurn = _turn.PreviousTurn;
-            if (previousTurn == null) return;
-
-            _boss.Copy(previousTurn.Boss);
-            _player.Copy(previousTurn.Player);
         }
 
         private void ApplyDifficulty()
@@ -73,6 +53,24 @@ namespace Brannstrom.AdventOfCode.Day22
             _player.ApplyEffects();
         }
 
+        private bool SomeoneDied => !_player.IsAlive || !_boss.IsAlive;
+
+        private TurnResult GetWinner()
+        {
+            return !_player.IsAlive ? 
+                TurnResult.PlayerLost : 
+                TurnResult.PlayerWon;
+        }
+
+        private void CopyValuesFromLastTurn()
+        {
+            var previousTurn = _turn.PreviousTurn;
+            if (previousTurn == null) return;
+
+            _boss.Copy(previousTurn.Boss);
+            _player.Copy(previousTurn.Player);
+        }
+
         private bool SpellIsIllegal()
         {
             var spellIsTooExpensive = _player.Mana < _spell.Cost; ;
@@ -81,6 +79,12 @@ namespace Brannstrom.AdventOfCode.Day22
             var isActiveShield = _spell is Shield && _player.ShieldTurns > 0;
 
             return (spellIsTooExpensive || isActivePoison || isActiveRecharge || isActiveShield);
+        }
+
+        private TurnResult GetEndOfTurnResult()
+        {
+            return !_player.IsAlive ?
+                TurnResult.PlayerLost : TurnResult.ContinueFight;
         }
 
         public void EnableHardDifficulty()

@@ -33,9 +33,7 @@ namespace Brannstrom.AdventOfCode.Day22
             var duel = new Duel();
             duel.EnableHardDifficulty();
             duel.Fight(turn);
-            var bossDamage = _boss.Damage;
-            var startingHp = _player.Hp;
-            turn.Player.Hp.Should().Be(startingHp - bossDamage - 1);
+            turn.Player.Hp.Should().Be(_player.Hp - _boss.Damage - 1);
         }
     }
 }

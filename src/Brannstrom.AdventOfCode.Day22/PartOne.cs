@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Brannstrom.AdventOfCode.Day22.Spells;
 using FluentAssertions;
 using NUnit.Framework;
@@ -53,18 +54,18 @@ namespace Brannstrom.AdventOfCode.Day22
         }
 
         [Test]
-        public void Poison_Should_Cost_173_Mana()
-        {
-            new Poison().Cost.Should().Be(173);
-        }
-
-        [Test]
         public void Poison_Should_Deal_3_Damage_For_6_Turns()
         {
             var startingHp = _boss.Hp;
             new Poison().Cast(_player, _boss);
             ApplySpellEffects(_boss);
             _boss.Hp.Should().Be(startingHp - 18);
+        }
+
+        [Test]
+        public void Poison_Should_Cost_173_Mana()
+        {
+            new Poison().Cost.Should().Be(173);
         }
 
         [Test]
@@ -101,6 +102,15 @@ namespace Brannstrom.AdventOfCode.Day22
         public void Shield_Should_Cost_113_Mana()
         {
             new Shield().Cost.Should().Be(113);
+        }
+
+        [Test]
+        public void Player_Should_Be_Able_To_Learn_All_Spells()
+        {
+            var player = new Character(50, 0, 0, 500);
+            player.SpellBook.Should().BeNull();
+            player.LearnAllSpells();
+            player.SpellBook.Spells.Distinct().Count().Should().Be(5);
         }
 
         [Test]
