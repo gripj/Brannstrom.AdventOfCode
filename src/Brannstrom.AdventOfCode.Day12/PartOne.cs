@@ -18,7 +18,7 @@ namespace Brannstrom.AdventOfCode.Day12
         [Test]
         public void Should_Count_Numbers_In_Provided_Input()
         {
-            _analyzer.GetSumOfAllNumbers(File.ReadAllText("..\\..\\Input.json")).Should().Be(191164);
+            _analyzer.GetSumOfAllNumbers(File.ReadAllText("Input.json")).Should().Be(191164);
         }
 
         [Test]
