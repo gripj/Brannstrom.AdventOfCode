@@ -24,7 +24,9 @@ namespace Brannstrom.AdventOfCode.Day2.InputCalculators
             var yPosition = Math.Min(keyPad.GetLength(1) - 1, Math.Max(0, currentPosition.Y + _yDirection));
             var nextPosition = new Point(xPosition, yPosition);
 
-            return keyPad[nextPosition.X, nextPosition.Y];
+            return keyPad[nextPosition.X, nextPosition.Y] != "" ?
+                keyPad[nextPosition.X, nextPosition.Y] : 
+                keyPad[currentPosition.X, currentPosition.Y];
         }
 
         private static Point GetPositionOfCurrentKey(string[,] keyPad, string currentKey)

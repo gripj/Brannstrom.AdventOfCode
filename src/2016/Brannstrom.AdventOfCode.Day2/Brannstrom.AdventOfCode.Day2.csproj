@@ -61,6 +61,7 @@
     <Compile Include="InputReader.cs" />
     <Compile Include="KeyPad.cs" />
     <Compile Include="PartOne.cs" />
+    <Compile Include="PartTwo.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
