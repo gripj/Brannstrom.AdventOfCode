@@ -13,9 +13,6 @@ namespace Brannstrom.AdventOfCode.Day1
             X = x;
         }
 
-        public int GetDistanceToOrigin()
-        {
-            return Math.Abs(X) + Math.Abs(Y);
-        }
+        public int GetDistanceToOrigin() => Math.Abs(X) + Math.Abs(Y);
     }
 }

@@ -38,29 +38,20 @@ namespace Brannstrom.AdventOfCode.Day1
         }
 
         [Test]
-        public void DirectionReaderShouldReadStringDirections()
+        [TestCase("R3", WalkDirections.Right, 3)]
+        [TestCase("L12", WalkDirections.Left, 12)]
+        public void DirectionReader_Should_Read_Single_Instruction(string input, WalkDirections expectedDirection, int expectedDistance)
         {
             var directionsReader = new DirectionReader();
 
-            var walkRightThreeSteps = "R3";
-            var walkLeftTwoSteps = "L2";
-            var walkRightTwelveSteps = "R12";
-
-            directionsReader.ConvertToWalkDirection(walkRightThreeSteps)
+            directionsReader
+                .ConvertToWalkDirection(input)
                 .Should()
-                .Be(new Tuple<WalkDirections, int>(WalkDirections.Right, 3));
-
-            directionsReader.ConvertToWalkDirection(walkLeftTwoSteps)
-                .Should()
-                .Be(new Tuple<WalkDirections, int>(WalkDirections.Left, 2));
-
-            directionsReader.ConvertToWalkDirection(walkRightTwelveSteps)
-                .Should()
-                .Be(new Tuple<WalkDirections, int>(WalkDirections.Right, 12));
+                .Be(new Tuple<WalkDirections, int>(expectedDirection, expectedDistance));
         }
 
         [Test]
-        public void DirectionsReaderShouldReadListOfInstructions()
+        public void DirectionsReader_Should_Read_Instructions()
         {
             var directionsReader = new DirectionReader();
 
@@ -96,9 +87,7 @@ namespace Brannstrom.AdventOfCode.Day1
             var directionsReader = new DirectionReader();
 
             foreach (var instruction in directionsReader.ReadInstructions())
-            {
                 _mapSolver.WalkDistance(instruction.Item1, instruction.Item2);
-            }
 
             _mapSolver.GetDistanceToTarget().Should().Be(273);
         }

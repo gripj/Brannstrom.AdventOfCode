@@ -14,17 +14,20 @@ namespace Brannstrom.AdventOfCode.Day1
             {"R", WalkDirections.Right}
         };
 
-        public Tuple<WalkDirections, int> ConvertToWalkDirection(string direction)
+        public Tuple<WalkDirections, int> ConvertToWalkDirection(string input)
         {
-            return new Tuple<WalkDirections, int>(_walkDirectionLookup[direction[0].ToString()],
-                Convert.ToInt32(direction.Substring(1)));
+            return new Tuple<WalkDirections, int>(_walkDirectionLookup[input[0].ToString()],
+                Convert.ToInt32(input.Substring(1)));
         }
 
         public List<Tuple<WalkDirections, int>> ReadInstructions()
         {
-            var instructions = ReadFile().First();
-
-            return instructions.Replace(" ", "").Split(',').Select(ConvertToWalkDirection).ToList();
+            return ReadFile()
+                    .First()
+                    .Replace(" ", "")
+                    .Split(',')
+                    .Select(ConvertToWalkDirection)
+                    .ToList();
         }
 
         private static IEnumerable<string> ReadFile()

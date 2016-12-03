@@ -10,7 +10,7 @@ namespace Brannstrom.AdventOfCode.Day1
     {
         private MapSolver _mapSolver;
         private DirectionReader _reader;
-        private readonly Point _origo = new Point(0, 0);
+        private readonly Point _origin = new Point(0, 0);
 
         [SetUp]
         public void SetUp()
@@ -22,7 +22,7 @@ namespace Brannstrom.AdventOfCode.Day1
         [Test]
         public void Should_Calculate_Positions_When_Going_East()
         {
-            var nextPositions = new CalculatePositionWhenGoingEast().CalculateNextPositions(_origo, 2);
+            var nextPositions = new CalculatePositionWhenGoingEast().CalculateNextPositions(_origin, 2);
             nextPositions.First().X.Should().Be(1);
             nextPositions.First().Y.Should().Be(0);
             nextPositions.Last().X.Should().Be(2);
@@ -32,7 +32,7 @@ namespace Brannstrom.AdventOfCode.Day1
         [Test]
         public void Should_Calculate_Positions_When_Going_West()
         {
-            var nextPositions = new CalculatePositionWhenGoingWest().CalculateNextPositions(_origo, 2);
+            var nextPositions = new CalculatePositionWhenGoingWest().CalculateNextPositions(_origin, 2);
             nextPositions.First().X.Should().Be(-1);
             nextPositions.First().Y.Should().Be(0);
             nextPositions.Last().X.Should().Be(-2);
@@ -42,7 +42,7 @@ namespace Brannstrom.AdventOfCode.Day1
         [Test]
         public void Should_Calculate_Positions_When_Going_North()
         {
-            var nextPositions = new CalculatePositionWhenGoingNorth().CalculateNextPositions(_origo, 2);
+            var nextPositions = new CalculatePositionWhenGoingNorth().CalculateNextPositions(_origin, 2);
             nextPositions.First().X.Should().Be(0);
             nextPositions.First().Y.Should().Be(1);
             nextPositions.Last().X.Should().Be(0);
@@ -52,7 +52,7 @@ namespace Brannstrom.AdventOfCode.Day1
         [Test]
         public void Should_Calculate_Positions_When_Going_South()
         {
-            var nextPositions = new CalculatePositionWhenGoingSouth().CalculateNextPositions(_origo, 2);
+            var nextPositions = new CalculatePositionWhenGoingSouth().CalculateNextPositions(_origin, 2);
             nextPositions.First().X.Should().Be(0);
             nextPositions.First().Y.Should().Be(-1);
             nextPositions.Last().X.Should().Be(0);
@@ -70,9 +70,7 @@ namespace Brannstrom.AdventOfCode.Day1
                 .ToList();
 
             foreach (var direction in directions)
-            {
                 _mapSolver.WalkDistance(direction.Item1, direction.Item2);
-            }
 
             _mapSolver.GetDistanceToFirstLocationVisitedTwice().Should().Be(4);
         }
@@ -83,9 +81,7 @@ namespace Brannstrom.AdventOfCode.Day1
             var directionsReader = new DirectionReader();
 
             foreach (var instruction in directionsReader.ReadInstructions())
-            {
                 _mapSolver.WalkDistance(instruction.Item1, instruction.Item2);
-            }
 
             _mapSolver.GetDistanceToFirstLocationVisitedTwice().Should().Be(115);
         }
