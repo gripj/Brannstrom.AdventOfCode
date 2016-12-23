@@ -52,8 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Elevator.cs" />
-    <Compile Include="Floor.cs" />
     <Compile Include="Generator.cs" />
     <Compile Include="InputReader.cs" />
     <Compile Include="Item.cs" />
