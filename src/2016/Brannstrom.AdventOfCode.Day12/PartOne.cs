@@ -37,6 +37,19 @@ namespace Brannstrom.AdventOfCode.Day12
         }
 
         [Test]
+        public void Copy_Instruction_Should_Copy_Negative_Numbers()
+        {
+            var registers = new List<Register>()
+            {
+                new Register("c", 7)
+            };
+
+            new CopyInstruction().Execute(registers, "cpy -16 c");
+
+            registers.First().Value.Should().Be(-16);
+        }
+
+        [Test]
         public void Increase_Instruction_Should_Increase_Register_Value_By_One()
         {
             var registers = new List<Register>()

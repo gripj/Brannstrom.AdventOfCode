@@ -15,7 +15,7 @@ namespace Brannstrom.AdventOfCode.Day12.InstructionExecutors
 
             var targetRegister = registers.First(x => x.Id == targetRegisterId);
 
-            if (value.All(char.IsDigit))
+            if (IsNumber(value))
                 targetRegister.SetValue(int.Parse(value));
             else
             {
@@ -24,6 +24,12 @@ namespace Brannstrom.AdventOfCode.Day12.InstructionExecutors
             }
 
             return 1;
+        }
+
+        public static bool IsNumber(string input)
+        {
+            int n;
+            return int.TryParse(input, out n);
         }
     }
 }

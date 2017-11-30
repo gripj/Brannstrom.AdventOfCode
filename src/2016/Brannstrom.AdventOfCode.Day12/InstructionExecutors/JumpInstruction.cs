@@ -13,7 +13,10 @@ namespace Brannstrom.AdventOfCode.Day12.InstructionExecutors
                 ? int.Parse(instruction.Substring(4, 1))
                 : registers.First(x => x.Id == instruction.Substring(4, 1)).Value;
 
-            var value = int.Parse(instruction.Substring(6));
+            int n;
+            var value = int.TryParse(instruction.Substring(6), out n)
+                ? int.Parse(instruction.Substring(6))
+                : registers.First(x => x.Id == instruction.Substring(6)).Value;
 
             return instructionValue != 0 ? value : 1;
         }
