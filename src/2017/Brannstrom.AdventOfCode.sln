@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day1", "Brannstrom.AdventOfCode.Day1\Brannstrom.AdventOfCode.Day1.csproj", "{61F3F221-417B-4AF6-B00C-99561660A8FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day2", "Brannstrom.AdventOfCode.Day2\Brannstrom.AdventOfCode.Day2.csproj", "{0BDC1443-1E4B-4327-8307-7CE3C036326E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day3", "Brannstrom.AdventOfCode.Day3\Brannstrom.AdventOfCode.Day3.csproj", "{5157CAC6-ADFB-4DF9-A1FB-A60586B7F1D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day4", "Brannstrom.AdventOfCode.Day4\Brannstrom.AdventOfCode.Day4.csproj", "{C86CD9A3-D491-4C1E-BE9C-94451B7E8432}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{5157CAC6-ADFB-4DF9-A1FB-A60586B7F1D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5157CAC6-ADFB-4DF9-A1FB-A60586B7F1D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5157CAC6-ADFB-4DF9-A1FB-A60586B7F1D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C86CD9A3-D491-4C1E-BE9C-94451B7E8432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86CD9A3-D491-4C1E-BE9C-94451B7E8432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86CD9A3-D491-4C1E-BE9C-94451B7E8432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86CD9A3-D491-4C1E-BE9C-94451B7E8432}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
