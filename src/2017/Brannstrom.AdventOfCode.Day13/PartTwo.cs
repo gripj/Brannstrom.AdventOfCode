@@ -6,10 +6,10 @@ using NUnit.Framework;
 namespace Brannstrom.AdventOfCode.Day13
 {
     [TestFixture]
-    public class PartOne
+    public class PartTwo
     {
         [Test]
-        public void Should_Calculate_Severity_Of_Moving_Packet_Through_Firewall_In_Example()
+        public void Should_Find_Time_Delay_Needed_For_Safe_Passage_In_Example()
         {
             new FireWall(new List<string>()
                 {
@@ -18,18 +18,18 @@ namespace Brannstrom.AdventOfCode.Day13
                     "4: 4",
                     "6: 4"
                 })
-                .CalculateTotalSeverityWhenMovingThrough()
+                .CalculateTimeDelayNeededForSafePassage()
                 .Should()
-                .Be(24);
+                .Be(10);
         }
 
         [Test]
-        public void Should_Calculate_Severity_Of_Moving_Packet_Through_Firewall()
+        public void Should_Find_Time_Delay_Needed_For_Safe_Passage()
         {
             new FireWall(File.ReadAllLines("input.txt"))
-                .CalculateTotalSeverityWhenMovingThrough()
+                .CalculateTimeDelayNeededForSafePassage()
                 .Should()
-                .Be(1316);
+                .Be(3840052);
         }
     }
 }
