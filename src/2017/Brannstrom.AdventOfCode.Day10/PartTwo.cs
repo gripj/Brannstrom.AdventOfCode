@@ -14,13 +14,13 @@ namespace Brannstrom.AdventOfCode.Day10
         [TestCase("1,2,4", "63960835bcdc130f0b66d7ff4f6a5a8e")]
         public void Should_Calculate_Hexadecimal_Dense_Hash_In_Example(string input, string expectedHash)
         {
-            KnotHasher.HexadecimalDenseHash(input.ToASCIILengths(), 64).Should().Be(expectedHash);
+            KnotHasher.HexadecimalDenseHash(input).Should().Be(expectedHash);
         }
 
         [Test]
         public void Should_Calculate_Hexadecimal_Dense_Hash()
         {
-            KnotHasher.HexadecimalDenseHash(File.ReadAllText("input.txt").ToASCIILengths(), 64)
+            KnotHasher.HexadecimalDenseHash(File.ReadAllText("input.txt"))
                 .Should()
                 .Be("9d5f4561367d379cfbf04f8c471c0095");
         }

@@ -5,7 +5,22 @@ namespace Brannstrom.AdventOfCode.Day10
 {
     public static class KnotHasher
     {
-        public static int[] SparseHash(IEnumerable<int> lengths, int rounds, int listSize = 256)
+        public static int[] SparseHash(string input, int rounds, int listSize = 256)
+        {
+            return SparseHash(input.ToLengths(), rounds, listSize);
+        }
+
+        public static string HexadecimalDenseHash(string input)
+        {
+            return SparseHash(input.ToASCIILengths(), 64).ToDense().Select(ToHexadecimal).Join();
+        }
+
+        public static IEnumerable<int> DenseHash(string input)
+        {
+            return SparseHash(input.ToASCIILengths(), 64).ToDense();
+        }
+
+        private static int[] SparseHash(IEnumerable<int> lengths, int rounds, int listSize = 256)
         {
             var output = Enumerable.Range(0, listSize).ToArray();
 
@@ -29,17 +44,12 @@ namespace Brannstrom.AdventOfCode.Day10
             return output;
         }
 
-        public static string HexadecimalDenseHash(IEnumerable<int> input, int rounds, int listSize = 256)
-        {
-            return SparseHash(input, 64).ToDense().Select(ToHexadecimal).Join();
-        }
-
-        public static IEnumerable<int> ToLengths(this string lengths)
+        private static IEnumerable<int> ToLengths(this string lengths)
         {
             return lengths.Replace(" ", "").Split(',').Select(int.Parse);
         }
 
-        public static IEnumerable<int> ToASCIILengths(this string lengths)
+        private static IEnumerable<int> ToASCIILengths(this string lengths)
         {
             var suffixLengths = new[] { 17, 31, 73, 47, 23 };
             return lengths.ToCharArray().Select(b => (int)b).Concat(suffixLengths);
