@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day1", "Brannstrom.AdventOfCode.Day1\Brannstrom.AdventOfCode.Day1.csproj", "{61F3F221-417B-4AF6-B00C-99561660A8FB}"
 EndProject
@@ -36,6 +36,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day16", "Brannstrom.AdventOfCode.Day16\Brannstrom.AdventOfCode.Day16.csproj", "{71C9BC53-EA57-466D-A457-9FE6D2857702}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day17", "Brannstrom.AdventOfCode.Day17\Brannstrom.AdventOfCode.Day17.csproj", "{5E3678E2-0827-4545-8C56-506E7962C2BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brannstrom.AdventOfCode.Day18", "Brannstrom.AdventOfCode.Day18\Brannstrom.AdventOfCode.Day18.csproj", "{76A51BDD-6D92-43AB-A4E5-E868A7254FE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{5E3678E2-0827-4545-8C56-506E7962C2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E3678E2-0827-4545-8C56-506E7962C2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E3678E2-0827-4545-8C56-506E7962C2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A51BDD-6D92-43AB-A4E5-E868A7254FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A51BDD-6D92-43AB-A4E5-E868A7254FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A51BDD-6D92-43AB-A4E5-E868A7254FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A51BDD-6D92-43AB-A4E5-E868A7254FE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
