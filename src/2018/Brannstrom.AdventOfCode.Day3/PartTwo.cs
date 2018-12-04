@@ -35,7 +35,5 @@ namespace Brannstrom.AdventOfCode.Day3
       claims.First(x => !overlappingClaims.Contains(x.Id)).Id.Should().Be(695);
     }
   }
-
-
 }
 
