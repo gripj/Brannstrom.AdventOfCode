@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClaimEvaluator.cs" />
+    <Compile Include="ClaimEvaluation.cs" />
     <Compile Include="InputReader.cs" />
     <Compile Include="PartOne.cs" />
     <Compile Include="PartTwo.cs" />
