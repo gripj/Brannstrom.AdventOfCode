@@ -18,12 +18,12 @@ namespace Brannstrom.AdventOfCode.Day10
     public static Point Parse(string input)
     {
       var parts = Regex.Replace(input, @"\s+", "").Split('<');
-      var pixelParts = parts[1].Split(',');
-      var vectorParts = parts[2].Split(',');
-      var pX = int.Parse(pixelParts[0]);
-      var pY = int.Parse(pixelParts[1].Split('>')[0]);
-      var vX = int.Parse(vectorParts[0]);
-      var vY = int.Parse(vectorParts[1].TrimEnd('>'));
+      var coordinateParts = parts[1].Split(',');
+      var velocityParts = parts[2].Split(',');
+      var pX = int.Parse(coordinateParts[0]);
+      var pY = int.Parse(coordinateParts[1].Split('>')[0]);
+      var vX = int.Parse(velocityParts[0]);
+      var vY = int.Parse(velocityParts[1].TrimEnd('>'));
 
       return new Point((pX, pY), (vX, vY));
     }

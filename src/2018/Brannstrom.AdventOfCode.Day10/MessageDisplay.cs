@@ -6,9 +6,9 @@ namespace Brannstrom.AdventOfCode.Day10
 {
   public class MessageDisplay
   {
-    public MessageDisplay(IEnumerable<string> input)
+    public MessageDisplay(IEnumerable<string> inputPoints)
     {  
-      var points = input.Select(Point.Parse).ToList();
+      var points = inputPoints.Select(Point.Parse).ToList();
       var second = 0;
       var dimensions = (x: 100, y: 50);
 
