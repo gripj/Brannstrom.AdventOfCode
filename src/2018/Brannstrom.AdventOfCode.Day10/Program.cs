@@ -47,7 +47,7 @@ namespace Brannstrom.AdventOfCode.Day10
 
     private static IEnumerable<string> ReadInputFile()
     {
-      return File.ReadAllLines("Input.txt");
+      return File.ReadAllLines("input.txt");
     }
   }
 }
